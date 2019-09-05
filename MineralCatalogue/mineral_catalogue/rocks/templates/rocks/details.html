@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+        <div class="grid-100 mineral__container">
+            <h1 class="mineral__name">{{ mineral_detail.name|title }}</h1>
+            <div class="mineral__image-bg">
+                <!--<img src="/static/images/{{ mineral_detail.image_filename }}" alt="">-->
+                <!-- Notice the difference between the above img tag and the below. IF someone was to take your rocks app
+                And they used it in their django project, the file path of the img tag above could be wrong.
+                How to combat this? By using the static_url below. So if you changed the folder from static to asset, or to anything else,
+                you would have to go through all of your code and change all the /static/ to /asset/,
+                its a way to hide the folder structure, or mask it in the URL.-->
+                <img class="mineral__image" src="{{ STATIC_URL }}/images/{{ mineral_detail.image_filename }}" alt="">
+
+                 <p class="mineral__caption">{{ mineral_detail.image_caption }}</p>
+            </div>
+            <div class="mineral__table-container">
+                <table class="mineral__table" style="color: rosybrown">
+                    <tr>
+                        <td class="mineral__category">Category</td>
+                        <td>{{ mineral_detail.category|title }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Formula</td>
+                        <td>{{ mineral_detail.formula|title }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Strunz Classification</td>
+                        <td>{{ mineral_detail.strunz_classification|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Color</td>
+                        <td>{{ mineral_detail.color|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal System</td>
+                        <td>{{ mineral_detail.crystal_system|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Unit Cell</td>
+                        <td>{{ mineral_detail.unit_cell|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal Symmetry</td>
+                        <td>{{ mineral_detail.crystal_symmetry|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Cleavage</td>
+                        <td>{{ mineral_detail.cleavage|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Mohs Scale Hardness</td>
+                        <td>{{ mineral_detail.mohs_scale_hardness|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Luster</td>
+                        <td>{{ mineral_detail.Luster|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Streak</td>
+                        <td>{{ mineral_detail.streak|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Diaphaneity</td>
+                        <td>{{ mineral_detail.diaphaneity|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Optical Properties</td>
+                        <td>{{ mineral_detail.optical_properties|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Refractive Index</td>
+                        <td>{{ mineral_detail.refractive_index|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal Habit</td>
+                        <td>{{ mineral_detail.crystal_habit|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Specific Gravity</td>
+                        <td>{{ mineral_detail.specific_gravity|title  }}</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+{% endblock %}

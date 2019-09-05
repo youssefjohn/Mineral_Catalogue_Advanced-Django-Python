@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+        <div class="grid-100">
+
+            <ul class="minerals__container ">
+                {% for mineral in mineral_names %}
+                    <li class="minerals__item">
+                        <a class = "minerals__anchor" href="{% url "rocks:details" pk=mineral.id %}">{{ mineral.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <style>
+        a:hover {
+        background-color: yellow;
+                }
+    </style>
+    <meta charset="UTF-8">
+    <title>All About Minerals!</title>
+    <link rel="stylesheet" href="{% static 'css/global.css'  %}">
+</head>
+
+<body>
+    <div class="bounds">
+        <div class="button">
+            <a class="" href="{% url "rocks:index" %}">Home</a>
+        </div>
+        <div class="grid-100">
+
+            <div class="mineral__container">
+                <img class="mineral__image rotate thumbnail"  src="{% static "/images/Therock.jpg" %}" alt="">
+                <h1 style="color: rosybrown;">Youssefs rocks!</h1>
+                <h3 style="color: #999999">..or are they Minerals?</h3>
+
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="minerals__random">
+        <a class="minerals__anchor" href="{% url "rocks:random" %}">Generate Random Mineral!!!</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+        <div class="grid-100 mineral__container">
+            <h1 class="mineral__name">{{ random_mineral.name|title }}</h1>
+            <div class="mineral__image-bg">
+                <!--<img src="/static/images/{{ random_mineral.image_filename }}" alt="">-->
+                <!-- Notice the difference between the above img tag and the below. IF someone was to take your rocks app
+                And they used it in their django project, the file path of the img tag above could be wrong.
+                How to combat this? By using the static_url below. So if you changed the folder from static to asset, or to anything else,
+                you would have to go through all of your code and change all the /static/ to /asset/,
+                its a way to hide the folder structure, or mask it in the URL.-->
+                <img class="mineral__image" src="{{ STATIC_URL }}/images/{{ random_mineral.image_filename }}" alt="">
+
+                 <p class="mineral__caption">{{ random_mineral.image_caption }}</p>
+            </div>
+            <div class="mineral__table-container">
+                <table class="mineral__table" style="color: rosybrown">
+                    <tr>
+                        <td class="mineral__category">Category</td>
+                        <td>{{ random_mineral.category|title }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Formula</td>
+                        <td>{{ random_mineral.formula|title }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Strunz Classification</td>
+                        <td>{{ random_mineral.strunz_classification|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Color</td>
+                        <td>{{ random_mineral.color|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal System</td>
+                        <td>{{ random_mineral.crystal_system|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Unit Cell</td>
+                        <td>{{ random_mineral.unit_cell|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal Symmetry</td>
+                        <td>{{ random_mineral.crystal_symmetry|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Cleavage</td>
+                        <td>{{ random_mineral.cleavage|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Mohs Scale Hardness</td>
+                        <td>{{ random_mineral.mohs_scale_hardness|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Luster</td>
+                        <td>{{ random_mineral.Luster|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Streak</td>
+                        <td>{{ random_mineral.streak|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Diaphaneity</td>
+                        <td>{{ random_mineral.diaphaneity|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Optical Properties</td>
+                        <td>{{ random_mineral.optical_properties|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Refractive Index</td>
+                        <td>{{ random_mineral.refractive_index|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Crystal Habit</td>
+                        <td>{{ random_mineral.crystal_habit|title  }}</td>
+                    </tr>
+                    <tr>
+                        <td class="mineral__category">Specific Gravity</td>
+                        <td>{{ random_mineral.specific_gravity|title  }}</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+{% endblock %}
+
