@@ -15,14 +15,109 @@
 
 <body>
     <div class="bounds">
-        <div class="button">
-            <a class="" href="{% url "rocks:index" %}">Home</a>
+        <div class="">
+            <nav class="nav">
+                <ul>
+
+                    <li>
+                        <a class="" href="{% url "rocks:index" letter='home' %}">Home</a>
+                    </li>
+
+                    <li class="">
+                        <a href="{% url 'rocks:index' letter='A' %}">A</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='B' %}">B</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='C' %}">C</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='D' %}">D</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='E' %}">E</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='F' %}">F</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='G' %}">G</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='H' %}">H</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='I' %}">I</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='J' %}">J</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='K' %}">K</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='L' %}">L</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='M' %}">M</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='N' %}">N</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='O' %}">O</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='P' %}">P</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='Q' %}">Q</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='R' %}">R</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='S' %}">S</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='T' %}">T</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='U' %}">U</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='V' %}">V</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='W' %}">W</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='X' %}">X</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='Y' %}">Y</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'rocks:index' letter='Z' %}">Z</a>
+                    </li>
+                    <div>
+                        <form action="" method="POST" >
+                            {% csrf_token %}
+                            <input type="search" value="" name="name">
+                            <input type="submit" value="Submit">
+                        </form>
+
+                    </div>
+                </ul>
+            </nav>
+
         </div>
         <div class="grid-100">
 
             <div class="mineral__container">
                 <img class="mineral__image rotate thumbnail"  src="{% static "/images/Therock.jpg" %}" alt="">
-                <h1 style="color: rosybrown;">Youssefs rocks!</h1>
+                <h1 style="color: rosybrown;">Rocks!</h1>
                 <h3 style="color: #999999">..or are they Minerals?</h3>
 
             </div>

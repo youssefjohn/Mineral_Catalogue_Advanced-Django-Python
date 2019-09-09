@@ -3,26 +3,28 @@
    THEN FEED IT TO THE TEMPLATE.
 '''
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from .models import Mineral
 from random import choice
-
-# Create your views here.
-
+from django.http import HttpResponseRedirect
 
 
 
-def index(request):
-    '''
-        INDEX VIEW TAKES IN ALL OF THE MINERAL OBJECTS IN ORDER OF THEIR NAMES.
-       IT THEN IS PASSED INTO A DICTIONARY TO BE ABLE TO BE USED
-       IN THE INDEX.HTML TEMPLATE.
-    '''
+def index(request, letter):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        print(name)
+        mins = Mineral.objects.filter(name__icontains=name)
 
-    mins = Mineral.objects.order_by('name')
-    minerals = {"mineral_names": mins}
+    elif letter == 'home':
+        mins = Mineral.objects.all()
 
-    return render(request, "rocks/index.html", context=minerals)
+    else:
+        mins = Mineral.objects.filter(name__startswith=letter)
+
+    minerals = {'mineral_names':mins}
+    return render(request, 'rocks/index.html', context=minerals)
+
 
 
 
@@ -34,8 +36,12 @@ def details(request, pk):
         MATCHING MINERAL USING THE PK, THEN RENDERS IT.
     '''
 
+
+
+    print('works')
     mins = get_object_or_404(Mineral, pk=pk)
     minerals = {"mineral_detail": mins}
+
 
     return render(request, "rocks/details.html", context=minerals)
 
@@ -52,4 +58,5 @@ def random(request):
     random = {"random_mineral": new_all}
 
     return render(request, "rocks/random.html", context=random)
+
 
