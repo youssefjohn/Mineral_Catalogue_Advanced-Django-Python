@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('rocks.urls', namespace="rocks")),
-
+    # https://www.youtube.com/watch?v=iSVDQ-TAex4
+    path(r'^__debug__', include(debug_toolbar.urls))
 ]

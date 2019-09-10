@@ -13,8 +13,27 @@
     <link rel="stylesheet" href="{% static 'css/global.css'  %}">
 </head>
 
+
+
+
 <body>
+
+<div>
+            <nav>
+                <li>a</li>
+
+                <li>b</li>
+                <li>c</li>
+            </nav>
+
+</div>
+
+
+<div class ="box1"> 1</div>
+<div class ="box1"> 2</div>
+
     <div class="bounds">
+
         <div class="">
             <nav class="nav">
                 <ul>
@@ -102,17 +121,41 @@
                         <a href="{% url 'rocks:index' letter='Z' %}">Z</a>
                     </li>
                     <div>
+
                         <form action="" method="POST" >
                             {% csrf_token %}
-                            <input type="search" value="" name="name">
+                            <input type="search" placeholder="Search For Mineral" name="name">
                             <input type="submit" value="Submit">
                         </form>
 
                     </div>
                 </ul>
             </nav>
+        </div>
+
+        <div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'rocks:index' letter='silicate' %}">Silicates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='oxide' %}">Oxides</a></li>
+                    <li><a href="{% url 'rocks:index' letter='sulfate' %}">Sulphates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='sulfide' %}">Sulphides</a></li>
+                    <li><a href="{% url 'rocks:index' letter='carbonate' %}">Carbonates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='halide' %}">Halides</a></li>
+                    <li><a href="{% url 'rocks:index' letter='sulfosalt' %}">Sulfosalts</a></li>
+                    <li><a href="{% url 'rocks:index' letter='phosphate' %}">Phosphates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='borate' %}">Borates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='organic' %}">Organic Mineral</a></li>
+                    <li><a href="{% url 'rocks:index' letter='arsenate' %}">Arsenates</a></li>
+                    <li><a href="{% url 'rocks:index' letter='native elements' %}">Native Elements</a></li>
+                    <li><a href="{% url 'rocks:index' letter='other' %}">Other</a></li>
+                </ul>
+            </nav>
+
 
         </div>
+
+
         <div class="grid-100">
 
             <div class="mineral__container">
@@ -124,6 +167,9 @@
 
             {% block content %}{% endblock %}
         </div>
+
+
+
     </div>
 
     <div class="minerals__random">

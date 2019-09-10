@@ -204,6 +204,16 @@ table, p, ul { margin-bottom: 2.5rem; }
 .mineral__formula { font-size: 12px; }
 
 
+
+
+.box1{
+width: 100px;
+height: 100px;
+display: inline-block; /* Change this to block and see what happens */
+position:relative;
+}
+
+
 .rotate {
   animation: rotation 10s infinite linear;
 }
